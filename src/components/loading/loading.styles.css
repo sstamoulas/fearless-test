@@ -1,0 +1,26 @@
+.loading {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .loading {
+    animation: App-loading-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-loading-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-image {
+  height: 50%;
+  width: 50%;
+}
