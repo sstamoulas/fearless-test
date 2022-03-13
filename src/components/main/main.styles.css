@@ -1,0 +1,21 @@
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-wrap: wrap;
+  height: 90vh;
+  width: 100vw;
+}
+
+button,
+input {
+  width: 25%;
+  font-size: 15px;
+}
+
+div {
+  padding: 10px 0;
+  font-size: 18pt;
+  text-align: center;
+  width: 90%;
+}
