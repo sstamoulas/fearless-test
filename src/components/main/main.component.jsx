@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import countapi from 'countapi-js';
 
 import './main.styles.css';
 
-const Main = ({ totalHits, updateHits }) => {
-  const callHitAPI = () => countapi.hit('1ccb732e-b55a-4404-ad3f-0f99c02fe44e');
+const Main = ({ apiKey, totalHits, inputHandler, updateHits }) => {
+  const callHitAPI = () => countapi.hit(apiKey);
   const hitHandler = async () => {
     const { value } = await callHitAPI();
     updateHits(value);
@@ -12,6 +12,8 @@ const Main = ({ totalHits, updateHits }) => {
 
   return (
     <div className='main-content'>
+      <label htmlFor='key'>Key:&nbsp;</label>
+      <input type='text' id='key' value={apiKey} onChange={inputHandler} />
       <button onClick={hitHandler}>Hit the API</button>
       <div>Total Hits: {totalHits}</div>
     </div>
